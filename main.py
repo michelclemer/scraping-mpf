@@ -9,6 +9,9 @@ def main():
 
     try:
         process_number = os.getenv("PROCESS_NUMBER")
+        if process_number is None:
+            print("Por favor, defina a variável de ambiente PROCESS_NUMBER com o número do processo.")
+            return
 
         raw_data = scraper.search_process(process_number)
 
